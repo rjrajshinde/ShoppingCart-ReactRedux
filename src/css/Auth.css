@@ -1,0 +1,12 @@
+.titlediv {
+  text-align: center;
+}
+
+.titlediv .subtitle {
+  letter-spacing: 5px;
+}
+
+.button {
+  left: 50%;
+  transform: translateX(-50%);
+}

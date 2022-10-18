@@ -1,0 +1,86 @@
+#heading {
+  font-weight: 800;
+  text-decoration: none !important;
+}
+
+#heading::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #18272f;
+  bottom: 0;
+  left: 10;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+#heading:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+#heading:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+.navbar {
+  transition: all 0.6s ease-out;
+}
+
+/* Button CSS */
+
+#headerbutton {
+  display: flex;
+  gap: 1em;
+}
+
+#cartButton {
+  padding: 7px;
+  background-color: #363636;
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+#logoutButton {
+  background-color: rgb(207, 15, 15);
+  font-weight: 700;
+  padding: 8px;
+  border: none;
+}
+
+#logoutButton .text {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#logoutButton .text:after {
+  content: "\2794";
+  position: absolute;
+  opacity: 0;
+  top: -7px;
+  right: -20px;
+  transition: 0.5s;
+  font-size: 25px;
+}
+
+#logoutButton:hover .text {
+  padding-right: 25px;
+}
+
+#logoutButton:hover .text:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* #headerbutton:hover {
+  background-color: #fff;
+  color: #363636;
+  border: 1px solid #363636;
+} */
