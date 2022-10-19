@@ -15,19 +15,6 @@ const Layout = () => {
         <Header />
         <Products />
         <CartItems />
-        {/* <section className="section">
-          <div className="container is-pulled-right">
-            <div className="mb-6">
-              <h3 className="title is-4">
-                <FontAwesomeIcon icon={faMoneyCheckDollar} /> Total:{"  "}
-                <FontAwesomeIcon icon={faDollar} />
-                {"  "}
-                100
-              </h3>
-              <button className="button is-success">Place Order</button>
-            </div>
-          </div>
-        </section> */}
       </div>
     </React.Fragment>
   );
