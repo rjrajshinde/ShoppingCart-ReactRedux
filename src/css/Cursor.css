@@ -1,0 +1,41 @@
+html,
+body {
+  cursor: none;
+}
+
+* {
+  cursor: none;
+}
+
+.cursorRing {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000000;
+  border-radius: 100%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  transition: all 100ms ease;
+  pointer-events: none;
+  transition-property: opacity, background-color, transform;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cursor {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(43, 42, 42);
+  border-radius: 50%;
+  position: relative;
+}
+
+.c--hidden {
+  opacity: 0;
+}
+
+.c--click {
+  transform: translate(-50%, -50%) scale(0.5);
+  background-color: #121212;
+}

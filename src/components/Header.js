@@ -27,8 +27,8 @@ const Header = () => {
         <div
           className={
             isActive
-              ? "navbar-menu is-active has-background-light is-clickable"
-              : "navbar-menu has-background-light is-clickable"
+              ? "navbar-menu is-active has-background-light "
+              : "navbar-menu has-background-light "
           }
           id="nav-links"
         >
