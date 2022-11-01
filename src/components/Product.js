@@ -28,7 +28,7 @@ const Product = ({ name, id, imgURL, price }) => {
             <p>$ {price}</p>
           </div>
           <footer
-            className="button card-footer has-background-dark is-clickable"
+            className="button card-footer has-background-dark "
             onClick={clickAddToCart}
             id="footerBtn"
           >

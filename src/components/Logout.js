@@ -13,7 +13,7 @@ const Logout = () => {
   return (
     <>
       <button
-        className="control is-clickable has-text-white"
+        className="control  has-text-white"
         onClick={handleModal}
         id="logoutButton"
       >

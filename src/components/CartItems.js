@@ -49,9 +49,10 @@ const CartItems = () => {
               onClick={handleModal}
             ></button>
           </header>
-          <section className="modal-card-body">
-            {cartItems.length !== 0 ? (
-              <>
+
+          {cartItems.length !== 0 ? (
+            <>
+              <section className="modal-card-body">
                 <div className="columns" id="CartColumns">
                   {cartItems.map((ele) => (
                     <CartItem
@@ -75,16 +76,18 @@ const CartItems = () => {
                     {"  "} Place Order
                   </span>
                 </footer>
-              </>
-            ) : (
+              </section>
+            </>
+          ) : (
+            <section className="modal-card-body is-clipped">
               <div className="column">
                 <div className="container has-text-centered">
                   <p>The Cart is Empty. Please Buy most of the Products.</p>
                   <img src={EmptyCartLogo} alt="EmptyCartLogo" />
                 </div>
-              </div>
-            )}
-          </section>
+              </div>{" "}
+            </section>
+          )}
         </div>
       </div>
     </>
