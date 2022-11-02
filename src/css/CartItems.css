@@ -24,11 +24,17 @@
   border-radius: 20px;
   border: 1px solid hsl(141, 71%, 48%);
   padding: 0.5em;
-  cursor: pointer;
+  cursor: none;
 }
 
 .modal-card-footer span:hover {
   background-color: #fff;
   color: #363636;
   border: 1px solid #363636;
+}
+
+.giphy-embed {
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }

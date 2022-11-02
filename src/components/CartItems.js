@@ -44,7 +44,7 @@ const CartItems = () => {
           <header className="modal-card-head has-background-dark">
             <p className="modal-card-title has-text-white">Your Cart</p>
             <button
-              className="delete"
+              className="delete linkking"
               aria-label="close"
               onClick={handleModal}
             ></button>
@@ -58,6 +58,7 @@ const CartItems = () => {
                     <CartItem
                       id={ele.id}
                       name={ele.name}
+                      key={ele.id}
                       quantity={ele.quantity}
                       price={ele.price}
                       total={ele.totalPrice}
@@ -71,7 +72,7 @@ const CartItems = () => {
                     {"   "}
                     Total Price : $ {totalCartItemPrice}
                   </p>
-                  <span>
+                  <span className="linkking">
                     <FontAwesomeIcon icon={faBagShopping} size="lg" />
                     {"  "} Place Order
                   </span>
