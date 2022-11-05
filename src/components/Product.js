@@ -28,7 +28,7 @@ const Product = ({ name, id, imgURL, price }) => {
             <p>$ {price}</p>
           </div>
           <footer
-            className="button card-footer has-background-dark "
+            className="button card-footer has-background-dark linkking"
             onClick={clickAddToCart}
             id="footerBtn"
           >
