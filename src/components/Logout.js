@@ -1,25 +1,20 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
-import { cartActions } from "../store/cart-slice";
-import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { authActions } from "../store/auth-slice";
 
 const Logout = () => {
   const dispatch = useDispatch();
 
-  const handleModal = () => {
-    // dispatch(cartActions.setShowCart());
+  const handleLogout = () => {
+    dispatch(authActions.logout());
   };
 
   return (
     <>
       <button
-        className="control  has-text-white"
-        onClick={handleModal}
+        className="control has-text-white linkking"
+        onClick={handleLogout}
         id="logoutButton"
       >
-        {/* <span className="icon">
-          <FontAwesomeIcon icon={faRightFromBracket} />
-        </span> */}
         <span className="text">Logout</span>
       </button>
     </>
