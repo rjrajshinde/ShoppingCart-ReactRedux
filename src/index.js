@@ -8,6 +8,7 @@ import store from "./store";
 import "animate.css";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
+import Cursor from "./components/Cursor";
 
 const options = {
   position: positions.BOTTOM_CENTER,
@@ -20,6 +21,7 @@ ReactDOM.render(
   <React.StrictMode>
     <AlertProvider template={AlertTemplate} {...options}>
       <Provider store={store}>
+        <Cursor />
         <App />
       </Provider>
     </AlertProvider>
