@@ -30,12 +30,12 @@ function App() {
     //* whatever the data is comming we are sending the request to the firebase live database with method put to insert it and if it is already present then update it
     const sendReq = async () => {
       //todo display alert before sending request
-      dispatch(
-        alertActions.showAlert({
-          type: "info",
-          message: "Sending Request. Please wait!",
-        })
-      );
+      // dispatch(
+      //   alertActions.showAlert({
+      //     type: "info",
+      //     message: "Sending Request. Please wait!",
+      //   })
+      // );
       const res = await fetch(
         "https://shopping-card-react-redux-default-rtdb.firebaseio.com/cartItems.json",
         {
@@ -81,7 +81,6 @@ function App() {
       }
     };
 
-    console.log("kinjoker", alertData);
     if (alertData) {
       showAlert(alertData.type, alertData.message);
     }

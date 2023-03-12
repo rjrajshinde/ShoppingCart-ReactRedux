@@ -8,9 +8,9 @@ import { authActions } from "../store/auth-slice";
 const Auth = () => {
   const [isActive, setIsActive] = useState(false);
   const dispatch = useDispatch();
-  const handleClick = (event) => {
-    setIsActive((current) => !current);
-  };
+  // const handleClick = (event) => {
+  //   setIsActive((current) => !current);
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();

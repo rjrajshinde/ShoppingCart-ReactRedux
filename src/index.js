@@ -11,10 +11,10 @@ import AlertTemplate from "react-alert-template-basic";
 import Cursor from "./components/Cursor";
 
 const options = {
-  position: positions.BOTTOM_CENTER,
-  timeout: 3000,
-  offset: "30px",
-  transition: transitions.SCALE,
+  position: positions.BOTTOM_RIGHT,
+  timeout: 1000,
+  offset: "20px",
+  transition: transitions.FADE,
 };
 
 ReactDOM.render(
