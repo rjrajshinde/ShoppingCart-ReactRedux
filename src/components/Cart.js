@@ -17,7 +17,11 @@ const Cart = () => {
 
   return (
     <>
-      <button className="control" onClick={handleModal} id="cartButton">
+      <button
+        className="control linkking"
+        onClick={handleModal}
+        id="cartButton"
+      >
         <span className="icon">
           <FontAwesomeIcon icon={faCartShopping} />
         </span>

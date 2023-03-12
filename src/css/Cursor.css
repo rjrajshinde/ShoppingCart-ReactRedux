@@ -8,27 +8,34 @@ body {
 }
 
 .cursorRing {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #000000;
-  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  border: 3px solid black;
   position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 100%;
   transform: translate(-50%, -50%);
-  transition: all 100ms ease;
-  pointer-events: none;
-  transition-property: opacity, background-color, transform;
+  -webkit-transition-duration: 100ms;
+  transition-duration: 100ms;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  will-change: width, height, transform, border;
   z-index: 999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  pointer-events: none;
 }
 
-.cursor {
-  width: 15px;
-  height: 15px;
-  background-color: rgb(43, 42, 42);
-  border-radius: 50%;
-  position: relative;
+.cursorDot {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  pointer-events: none;
 }
 
 .c--hidden {
@@ -38,4 +45,60 @@ body {
 .c--click {
   transform: translate(-50%, -50%) scale(0.5);
   background-color: #121212;
+}
+
+.cursorRing.c--hover {
+  width: 50px;
+  height: 50px;
+  border-width: 3px;
+  background-color: rgba(31, 30, 30, 0.4);
+  animation: anim 2s infinite;
+}
+
+@keyframes anim {
+  0%,
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 52% 48% 70%;
+    box-shadow: 0 -2vmin 4vmin rgb(44, 255, 2) inset;
+    opacity: 0.4;
+  }
+
+  10% {
+    border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%;
+  }
+
+  20% {
+    border-radius: 67% 33% 47% 53% / 37% 20% 80% 63%;
+  }
+
+  30% {
+    border-radius: 39% 61% 47% 53% / 37% 40% 60% 63%;
+    box-shadow: 0 -4vmin 8vmin rgb(0, 119, 255) inset;
+  }
+
+  40% {
+    border-radius: 39% 61% 82% 18% / 74% 40% 60% 26%;
+  }
+
+  50% {
+    border-radius: 100%;
+    box-shadow: 0 4vmin 16vmin rgb(255, 2, 2) inset;
+  }
+
+  60% {
+    border-radius: 50% 50% 53% 47% / 72% 69% 31% 28%;
+  }
+
+  70% {
+    border-radius: 50% 50% 53% 47% / 26% 22% 78% 74%;
+    box-shadow: 1vmin 1vmin 8vmin rgb(255, 238, 2) inset;
+  }
+
+  80% {
+    border-radius: 50% 50% 53% 47% / 26% 69% 31% 74%;
+  }
+
+  90% {
+    border-radius: 20% 80% 20% 80% / 20% 80% 20% 80%;
+  }
 }

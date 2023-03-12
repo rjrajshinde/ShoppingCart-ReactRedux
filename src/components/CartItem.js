@@ -49,13 +49,13 @@ const CartItem = ({ name, quantity, total, price, id, imgURL }) => {
             </div>
             <footer className="card-footer">
               <div
-                className="card-footer-item has-background-info  has-text-white is-size-5"
+                className="card-footer-item has-background-info  has-text-white is-size-5 linkking "
                 onClick={addCartItemHandler}
               >
                 <FontAwesomeIcon icon={faPlus} />
               </div>
               <div
-                className="card-footer-item has-background-danger  has-text-white is-size-5"
+                className="card-footer-item has-background-danger  has-text-white is-size-5 linkking"
                 onClick={reduceCartItemHandler}
               >
                 <FontAwesomeIcon icon={faMinus} />
