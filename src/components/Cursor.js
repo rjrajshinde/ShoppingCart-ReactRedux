@@ -5,6 +5,8 @@ const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hidden, setHidden] = useState(false);
   const [click, setClick] = useState(false);
+  const [isOnLink, setIsOnLink] = useState(false);
+
   useEffect(() => {
     const addEventListeners = () => {
       document.addEventListener("mousemove", mMove);
@@ -20,6 +22,22 @@ const Cursor = () => {
       document.removeEventListener("mouseleave", mLeave);
       document.removeEventListener("mousedown", mDown);
       document.removeEventListener("mouseup", mUp);
+    };
+
+    const linkAddEventListeners = () => {
+      const linkItems = document.querySelectorAll(".linkking");
+      linkItems.forEach((item) => {
+        item.addEventListener("mouseenter", mLinkEnter);
+        item.addEventListener("mouseleave", mLinkLeave);
+      });
+    };
+
+    const linkRemoveEventListeners = () => {
+      const linkItems = document.querySelectorAll(".linkking");
+      linkItems.forEach((item) => {
+        item.removeEventListener("mouseenter", mLinkEnter);
+        item.removeEventListener("mouseleave", mLinkLeave);
+      });
     };
 
     const mDown = () => {
@@ -42,39 +60,50 @@ const Cursor = () => {
       setHidden(false);
     };
 
-    console.log(hidden);
+    const mLinkEnter = () => {
+      setIsOnLink(true);
+    };
+
+    const mLinkLeave = () => {
+      setIsOnLink(false);
+    };
 
     addEventListeners();
-    return () => removeEventListeners();
+    linkAddEventListeners();
+    return () => {
+      removeEventListeners();
+      linkRemoveEventListeners();
+    };
   }, []);
 
-  const cHidden = hidden ? "c--hidden " : " ";
-  const cClick = click ? "c--click " : " ";
+  console.log("isOnLink,isOnLink", isOnLink);
 
   return (
-    // <div
-    //   className={
-    //     "cursor " + (hidden ? "c--hidden " : " ") + (click ? "c--click " : " ")
-    //   }
-    //   //   className={`cursor ${cHidden} ${cClick}`}
-    //   style={{
-    //     left: `${position.x}px`,
-    //     top: `${position.y}px`,
-    //   }}
-    // />
-    <div
-      className={
-        "cursorRing " +
-        (hidden ? "c--hidden " : " ") +
-        (click ? "c--click " : " ")
-      }
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-      }}
-    >
-      <div className="cursor" />
-    </div>
+    <>
+      <div
+        className={
+          "cursorRing " +
+          (hidden ? "c--hidden " : " ") +
+          (click ? "c--click " : " ") +
+          (isOnLink ? "c--hover " : " ")
+        }
+        style={{
+          left: `${position.x}px`,
+          top: `${position.y}px`,
+        }}
+      ></div>
+      <div
+        className={
+          "cursorDot " +
+          (hidden ? "c--hidden " : " ") +
+          (click ? "c--click " : " ")
+        }
+        style={{
+          left: `${position.x}px`,
+          top: `${position.y}px`,
+        }}
+      />
+    </>
   );
 };
 

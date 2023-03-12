@@ -13,7 +13,7 @@ const Header = () => {
     <header>
       <nav className="navbar has-background-light p-3">
         <div className="navbar-brand">
-          <a className="navbar-item" id="Aheading" href="/">
+          <a className="navbar-item linkking" id="Aheading" href="/">
             <span className="is-size-4 is-uppercase" id="heading">
               Cart Project
             </span>
